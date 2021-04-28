@@ -16,8 +16,8 @@ we can generalize this case using tree.
 
 So running time of array which has n elements is Tn=Tn-1+ Θn=  n(n+1)2=  n2+n   2 , and big-O notation is O(n2 ).
 
-# **Problem 2
-Suppose we run QuickSort on some input, and magically, every recursive all chooses the "median" element of its subarray as its pivot. What's the running time in this case?**
+# **Problem 2**
+**Suppose we run QuickSort on some input, and magically, every recursive all chooses the "median" element of its subarray as its pivot. What's the running time in this case?**
 
 This is the best case since the array always divided by half. Its running time is nlogn. 
 
@@ -37,7 +37,7 @@ we can generalize this case using tree.
 
 ![image](https://user-images.githubusercontent.com/63644587/116439426-7eb9ef80-a88a-11eb-9c77-fd3f56451e68.png)
 
-The number of level(k) is n2k = 1, 2k = n, k=logn. And big-O notaition is (time per each level) \* (height) = n\*nlogn = O(nlogn). In this case every recursive call makes 2 subproblems with same size. So, running time is  Tn=Tn2+Tn2+ Θn 
+The number of level(k) is $$n/(2^k) = 1$$, $$2^k = n$$, $$k=\log n$$. And big-O notaition is (time per each level) \* (height) = n\*nlogn = $$O(n \log n)$$. In this case every recursive call makes 2 subproblems with same size. So, running time is  T(n)=T(n^2)+T(n^)+ \theta n$$ 
 
 # **Problem 3**
 **If T(n) = T(n/3) + T(2n/3) + n, express T(n) in big-O**
