@@ -1,7 +1,7 @@
 # **Problem 1**
 **suppose we implement QuickSort so that ChoosePivot always selects the "first element" of the array. What is the running time of this algorithm on an input array that is already sorted?**
 
-This is the worst case and its running time is O(n2 ).
+This is the worst case and its running time is $$O(n^2 )$$.
 
 Suppose we have an array 1~5. 
 
