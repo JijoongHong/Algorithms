@@ -89,9 +89,9 @@ We can prove this with substitution method, which is the way of proving an asymp
 
 Therefore, 
 
-<img width="294" alt="스크린샷 2021-04-29 오전 1 51 17" src="https://user-images.githubusercontent.com/63644587/116442370-64cddc00-a88d-11eb-9ce4-5b36a94fb9cb.png">
+<img width="294" alt="스크린샷 2021-04-29 오전 1 51 17" src="https://user-images.githubusercontent.com/63644587/116442370-64cddc00-a88d-11eb-9ce4-5b36a94fb9cb.png"> **when** 
 
-when <img width="328" alt="스크린샷 2021-04-29 오전 1 51 50" src="https://user-images.githubusercontent.com/63644587/116442447-78794280-a88d-11eb-97dd-b46cd83cbfc3.png">
+<img width="328" alt="스크린샷 2021-04-29 오전 1 51 50" src="https://user-images.githubusercontent.com/63644587/116442447-78794280-a88d-11eb-97dd-b46cd83cbfc3.png">
  
 
 And big-O notation of Tn is O(nlogn)
@@ -121,14 +121,14 @@ And big-O notation of Tn is O(nlogn)
           return lt, gt
 
 
-    def quick\_sort(a, lo, hi):*
+    def quick_sort(a, lo, hi):*
           if lo >= hi:
               return
 
           lt, gt = partition(a, lo, hi)
 
-          quick\_sort(a, lo, lt - 1)
-          quick\_sort(a, gt + 1, hi)
+          quick_sort(a, lo, lt - 1)
+          quick_sort(a, gt + 1, hi)
 
 
     if __name__ == "__main__" :
