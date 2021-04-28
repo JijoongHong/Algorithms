@@ -1,4 +1,4 @@
-# 1. Show how many array access are in Mergesort- Merge**
+# 1. Show how many array access are in Mergesort- Merge
 
 ## 1) 소스코드
 
@@ -48,7 +48,7 @@
 - 그러므로 merge 과정은 4N read, 2N write가 일어나며 이를 합산 시 array access 횟수는 6N회라고 볼 수 있다. 
 
 
-# 2. Write your own merge sort algorithm in bottom-up approach, and  describe in detail of yours** 
+# 2. Write your own merge sort algorithm in bottom-up approach, and  describe in detail of yours
 
 ## 1) 개요
 
@@ -79,17 +79,17 @@
 ## 3) getIdx( ), merge( )
 
       def getIdx(arr, size, n):
-      `    `lo1 = 0
-      `    `while lo1 + size < n + 1:
-      `        `hi1 = lo1 + size - 1
-      `        `lo2 = lo1 + size
-      `        `hi2 = lo2 + size - 1
+            lo1 = 0
+            while lo1 + size < n + 1:
+                hi1 = lo1 + size - 1
+                lo2 = lo1 + size
+                hi2 = lo2 + size - 1
 
-      `        `if hi2 >= n:
-      `            `hi2 = n - 1
+                if hi2 >= n:
+                    hi2 = n - 1
 
-      `        `merge(arr, lo1, hi1, lo2, hi2)
-      `        `lo1 = hi2 + 1
+                merge(arr, lo1, hi1, lo2, hi2)
+                lo1 = hi2 + 1
 
 
 - getIdx에서는 각 사이즈별로 병합 및 정렬할 두 작은 배열의 시작과 끝 위치를 지정해준다. 
@@ -98,31 +98,31 @@
 - 만약 두번째 배열의 인덱스가 n을 초과한다면 가장 끝 인덱스로 맞춰주는 작업을 수행한다.
 
       def merge(arr, lo1, hi1, lo2, hi2):
-      `    `i = lo1
-      `    `j = lo2
-      `    `temp = []
+            i = lo1
+            j = lo2
+            temp = []
 
-      `    `while i <= hi1 and j <= hi2:
-      `        `if arr[i] <= arr[j]:
-      `            `temp.append(arr[i])
-      `            `i += 1
+            while i <= hi1 and j <= hi2:
+                if arr[i] <= arr[j]:
+                    temp.append(arr[i])
+                    i += 1
 
-      `        `else:
-      `            `temp.append(arr[j])
-      `            `j += 1
+                else:
+                    temp.append(arr[j])
+                    j += 1
 
-      `    `while i <= hi1:
-      `        `temp.append(arr[i])
-      `        `i += 1
+            while i <= hi1:
+                temp.append(arr[i])
+                i += 1
 
-      `    `while j <= hi2:
-      `        `temp.append(arr[j])
-      `        `j += 1
+            while j <= hi2:
+                temp.append(arr[j])
+                j += 1
 
-      `    `for i in range(len(temp)):
-      `        `arr[lo1+i] = temp[i]
+            for i in range(len(temp)):
+                arr[lo1+i] = temp[i]
 
-      `    `print("size({0}) | merged data : {1} | current state : {2}".format((hi1-lo1+1), temp, arr))
+            print("size({0}) | merged data : {1} | current state : {2}".format((hi1-lo1+1), temp, arr))
 
 
 - 두 작은 배열의 시작과 끝을 입력받은 merge 함수는 각 배열의 값을 비교하고, 그 중 더 작은 값을 temp 리스트에 추가한다. 
