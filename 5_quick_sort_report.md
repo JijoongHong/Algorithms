@@ -1,7 +1,7 @@
 # **Problem 1**
 **suppose we implement QuickSort so that ChoosePivot always selects the "first element" of the array. What is the running time of this algorithm on an input array that is already sorted?**
 
-This is the worst case and its running time is $$O(n^2 )$$.
+This is the worst case and its running time is O(n^2 ).
 
 Suppose we have an array 1~5. 
 
@@ -14,7 +14,14 @@ we can generalize this case using tree.
 
 ![image](https://user-images.githubusercontent.com/63644587/116439327-62b64e00-a88a-11eb-830d-12f05fe5f4f1.png)
 
-So running time of array which has n elements is Tn=Tn-1+ Θn=  n(n+1)2=  n2+n   2 , and big-O notation is O(n2 ).
+So running time of array which has n elements is 
+
+<img width="624" alt="스크린샷 2021-04-29 오전 1 40 25" src="https://user-images.githubusercontent.com/63644587/116440891-e02e8e00-a88b-11eb-9cf0-22367a47d6cb.png">
+
+<img width="99" alt="스크린샷 2021-04-29 오전 1 40 42" src="https://user-images.githubusercontent.com/63644587/116440928-eae92300-a88b-11eb-9dd2-c71262eb2371.png">
+
+and big-O notation is <img width="99" alt="스크린샷 2021-04-29 오전 1 40 42" src="https://user-images.githubusercontent.com/63644587/116440928-eae92300-a88b-11eb-9dd2-c71262eb2371.png">
+.
 
 # **Problem 2**
 **Suppose we run QuickSort on some input, and magically, every recursive all chooses the "median" element of its subarray as its pivot. What's the running time in this case?**
