@@ -18,7 +18,6 @@ So running time of array which has n elements is
 
 <img width="624" alt="스크린샷 2021-04-29 오전 1 40 25" src="https://user-images.githubusercontent.com/63644587/116440891-e02e8e00-a88b-11eb-9cf0-22367a47d6cb.png">
 
-<img width="99" alt="스크린샷 2021-04-29 오전 1 40 42" src="https://user-images.githubusercontent.com/63644587/116440928-eae92300-a88b-11eb-9dd2-c71262eb2371.png">
 
 and big-O notation is <img width="99" alt="스크린샷 2021-04-29 오전 1 40 42" src="https://user-images.githubusercontent.com/63644587/116440928-eae92300-a88b-11eb-9dd2-c71262eb2371.png">
 .
