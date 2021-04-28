@@ -1,24 +1,22 @@
-﻿**HW2\_20176963 홍지중**
-
-**Problem 1**
+# **Problem 1**
 **suppose we implement QuickSort so that ChoosePivot always selects the "first element" of the array. What is the running time of this algorithm on an input array that is already sorted?**
 
 This is the worst case and its running time is O(n2 ).
 
 Suppose we have an array 1~5. 
 
-|1|2|3|4|5|->|1|2|3|4|5|
-| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-|`  `i||||j||`  `j|i||||
+<img width="845" alt="스크린샷 2021-04-29 오전 1 29 36" src="https://user-images.githubusercontent.com/63644587/116439298-5cc06d00-a88a-11eb-8a39-db28ca0d2fa7.png">
+
+
 In this case pivot is 1 and increment i until find element which is bigger than pivot. So i will stop at second index since array is already sorted. And j will be decremented until find element which is smaller than pivot. But there is no smaller element, so j will stop at first index, which is pivot. So now the first element is sorted and in this level, there are five comparisons. Once partitioning has done, we keep sort the rest of element. Now i begin to increment from index 2 and j will stop at index 2. This level makes four comparisons. In this manner, the total running time is 5+4+3+2+1 = 15.
 
 we can generalize this case using tree. 
 
-` `![](Aspose.Words.23446be4-3e69-4d16-8e4a-fc1c70d60e8b.001.jpeg)
+![image](https://user-images.githubusercontent.com/63644587/116439327-62b64e00-a88a-11eb-830d-12f05fe5f4f1.png)
 
 So running time of array which has n elements is Tn=Tn-1+ Θn=  n(n+1)2=  n2+n   2 , and big-O notation is O(n2 ).
 
-**Problem 2
+# **Problem 2
 Suppose we run QuickSort on some input, and magically, every recursive all chooses the "median" element of its subarray as its pivot. What's the running time in this case?**
 
 This is the best case since the array always divided by half. Its running time is nlogn. 
@@ -27,26 +25,27 @@ Suppose we have an array 1~7.
 
 |1|2|3|4|5|6|7|
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+
 In this case pivot is 4, and already there are smaller elements are located in left side and bigger elements are located in right side. In this level, there are 7 comparisions. And recursively conduct quick sort on left and right side until each array has only one element. 
 
-![텍스트, 시계이(가) 표시된 사진
+![image](https://user-images.githubusercontent.com/63644587/116439393-75308780-a88a-11eb-8853-d0da1f948c47.png)
 
-자동 생성된 설명](Aspose.Words.23446be4-3e69-4d16-8e4a-fc1c70d60e8b.002.jpeg)
 
 There are 2 times of division, that means it has 2 levels. Each level has approximately n comparisons, so running time is 7(n) \* 2(log7). 
 
 we can generalize this case using tree. 
 
-![](Aspose.Words.23446be4-3e69-4d16-8e4a-fc1c70d60e8b.003.jpeg)
+![image](https://user-images.githubusercontent.com/63644587/116439426-7eb9ef80-a88a-11eb-9c77-fd3f56451e68.png)
 
 The number of level(k) is n2k = 1, 2k = n, k=logn. And big-O notaition is (time per each level) \* (height) = n\*nlogn = O(nlogn). In this case every recursive call makes 2 subproblems with same size. So, running time is  Tn=Tn2+Tn2+ Θn 
 
-**Problem 3
-If T(n) = T(n/3) + T(2n/3) + n, express T(n) in big-O**
+# **Problem 3**
+**If T(n) = T(n/3) + T(2n/3) + n, express T(n) in big-O**
 
 Expressing T(n) using recursive tree, result is following
 
-![](Aspose.Words.23446be4-3e69-4d16-8e4a-fc1c70d60e8b.004.jpeg)
+![image](https://user-images.githubusercontent.com/63644587/116439497-95f8dd00-a88a-11eb-9608-e321deb023fb.png)
+
 
 Every branch is divided until each array becomes size 1. And this is not a perfect binary tree since it is not divided by half.
 
@@ -79,7 +78,7 @@ Tn ≤dnlogn, as long as d ≥1/(log3-23  ),
 And big-O notation of Tn is O(nlogn)
 
 
-**Problem 4
+# **Problem 4
 Implement 3-way partition.** 
 
 def partition(a, lo, hi):*
@@ -121,9 +120,8 @@ This method set the lt(litte) and gt(greater) and compare pivot with every eleme
 
 The result is following. 
 
-![텍스트이(가) 표시된 사진
+![image](https://user-images.githubusercontent.com/63644587/116439584-ad37ca80-a88a-11eb-9a1b-6d7afd4867f0.png)
 
-자동 생성된 설명](Aspose.Words.23446be4-3e69-4d16-8e4a-fc1c70d60e8b.005.png)
 
 There is another implementation of 3-way quick sort which uses small anonymous function, lambda. We can easily filter values in a given condition(smaller, equal, higher). After that, do some recursive tasks to lower and higher array, and finally every divided array is combined. 
 
@@ -147,9 +145,7 @@ if \_\_name\_\_ == "\_\_main\_\_" :
 
 The result is following. 
 
-![텍스트이(가) 표시된 사진
-
-자동 생성된 설명](Aspose.Words.23446be4-3e69-4d16-8e4a-fc1c70d60e8b.006.png)
+![image](https://user-images.githubusercontent.com/63644587/116439602-b32dab80-a88a-11eb-97f4-c55c41856913.png)
 
 Difference between this method and the previous one is that this method uses auxillary space but the other one uses index to compare and swap in a given array. So even if second one looks more simple and easy to implement, it has bigger space complexity.
 
