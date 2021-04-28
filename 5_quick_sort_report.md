@@ -61,7 +61,7 @@ Since nlog3n  ≤Tn≤ nlog3/2n is true, big-O notation of Tn  is O(nlogn).
 
 We can prove this with substitution method, which is the way of proving an asymptotic bound on a recurrence by induction. Assume that T(n) = O(nlogn ), T(N) should be smaller or equal than c\*nlogn, and c should be bigger than 0. That means Ogn=fn:n0≤n,0≤fn≤c\*gn 
 
-Tn ≤Tn3+T2n3+n ≤dn3logn3+d2n3log2n3+n
+$$T(n) ≤T(n3+T2n3+n ≤dn3logn3+d2n3log2n3+n
 
 `     `= dn3\*(log n-log3+2logn-2log3)+n
 
@@ -69,7 +69,7 @@ Tn ≤Tn3+T2n3+n ≤dn3logn3+d2n3log2n3+n
 
 `      `= d n3\*(3log n-3log3+2)+n
 
-`      `= d\*nlogn-dn(log3-23  )+n
+`      `= d\*nlogn-dn(log3-23  )+n $$
 
 Therefore, 
 
