@@ -45,6 +45,7 @@ we can generalize this case using tree.
 ![image](https://user-images.githubusercontent.com/63644587/116439426-7eb9ef80-a88a-11eb-9c77-fd3f56451e68.png)
 
 The number of level(k) is 
+
 <img width="585" alt="스크린샷 2021-04-29 오전 1 43 41" src="https://user-images.githubusercontent.com/63644587/116441354-57642200-a88c-11eb-8745-0f97f8f4d185.png">
 
 And big-O notaition is (time per each level) \* (height) = n\*nlogn = O(nlogn). In this case every recursive call makes 2 subproblems with same size. So, running time is 
@@ -63,10 +64,12 @@ Expressing T(n) using recursive tree, result is following
 Every branch is divided until each array becomes size 1. And this is not a perfect binary tree since it is not divided by half.
 
 Therefore, leftmost branch’s level(k) is 
+
 <img width="581" alt="스크린샷 2021-04-29 오전 1 46 50" src="https://user-images.githubusercontent.com/63644587/116441827-c5a8e480-a88c-11eb-8aed-0586ba4cb76d.png">
 
 
-And rightmost branch’s level(l) is  
+And rightmost branch’s level(l) is 
+
 <img width="485" alt="스크린샷 2021-04-29 오전 1 48 05" src="https://user-images.githubusercontent.com/63644587/116441983-f4bf5600-a88c-11eb-807e-b61411d3fc36.png">
 
 
@@ -86,14 +89,16 @@ We can prove this with substitution method, which is the way of proving an asymp
 
 Therefore, 
 
-<img width="294" alt="스크린샷 2021-04-29 오전 1 51 17" src="https://user-images.githubusercontent.com/63644587/116442370-64cddc00-a88d-11eb-9ce4-5b36a94fb9cb.png"> as long as <img width="328" alt="스크린샷 2021-04-29 오전 1 51 50" src="https://user-images.githubusercontent.com/63644587/116442447-78794280-a88d-11eb-97dd-b46cd83cbfc3.png">
+<img width="294" alt="스크린샷 2021-04-29 오전 1 51 17" src="https://user-images.githubusercontent.com/63644587/116442370-64cddc00-a88d-11eb-9ce4-5b36a94fb9cb.png">
+
+when <img width="328" alt="스크린샷 2021-04-29 오전 1 51 50" src="https://user-images.githubusercontent.com/63644587/116442447-78794280-a88d-11eb-97dd-b46cd83cbfc3.png">
  
 
 And big-O notation of Tn is O(nlogn)
 
 
-# **Problem 4
-Implement 3-way partition.** 
+# **Problem 4**
+**Implement 3-way partition quick sort.** 
 
     def partition(a, lo, hi):
 
@@ -126,7 +131,7 @@ Implement 3-way partition.**
           quick\_sort(a, gt + 1, hi)
 
 
-    if \_\_name\_\_ == "\_\_main\_\_" :
+    if __name__ == "__main__" :
           a = [40, 23, 42, 34, 53, 32, 22, 34, 53]
           quick\_sort(a, 0, 8)
 
@@ -152,7 +157,7 @@ There is another implementation of 3-way quick sort which uses small anonymous f
           return qsort(lower) + equal + qsort(higher)
 
 
-    if \_\_name\_\_ == "\_\_main\_\_" :
+    if __name__ == "__main__" :
           a = [40, 23, 42, 34, 53, 32, 22, 34, 53]
           b = qsort(a)
           print(b)
