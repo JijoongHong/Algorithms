@@ -19,7 +19,8 @@ So running time of array which has n elements is
 <img width="624" alt="스크린샷 2021-04-29 오전 1 40 25" src="https://user-images.githubusercontent.com/63644587/116440891-e02e8e00-a88b-11eb-9cf0-22367a47d6cb.png">
 
 
-and big-O notation is <img width="99" alt="스크린샷 2021-04-29 오전 1 40 42" src="https://user-images.githubusercontent.com/63644587/116440928-eae92300-a88b-11eb-9dd2-c71262eb2371.png">
+and big-O notation is 
+<img width="99" alt="스크린샷 2021-04-29 오전 1 40 42" src="https://user-images.githubusercontent.com/63644587/116440928-eae92300-a88b-11eb-9dd2-c71262eb2371.png">
 .
 
 # **Problem 2**
@@ -43,7 +44,13 @@ we can generalize this case using tree.
 
 ![image](https://user-images.githubusercontent.com/63644587/116439426-7eb9ef80-a88a-11eb-9c77-fd3f56451e68.png)
 
-The number of level(k) is $$n/(2^k) = 1$$, $$2^k = n$$, $$k=\log n$$. And big-O notaition is (time per each level) \* (height) = n\*nlogn = $$O(n \log n)$$. In this case every recursive call makes 2 subproblems with same size. So, running time is  T(n)=T(n^2)+T(n^)+ \theta n$$ 
+The number of level(k) is 
+<img width="585" alt="스크린샷 2021-04-29 오전 1 43 41" src="https://user-images.githubusercontent.com/63644587/116441354-57642200-a88c-11eb-8745-0f97f8f4d185.png">
+
+And big-O notaition is (time per each level) \* (height) = n\*nlogn = O(nlogn). In this case every recursive call makes 2 subproblems with same size. So, running time is 
+
+<img width="655" alt="스크린샷 2021-04-29 오전 1 44 49" src="https://user-images.githubusercontent.com/63644587/116441529-7cf12b80-a88c-11eb-8435-d90297092bf5.png">
+
 
 # **Problem 3**
 **If T(n) = T(n/3) + T(2n/3) + n, express T(n) in big-O**
@@ -55,31 +62,32 @@ Expressing T(n) using recursive tree, result is following
 
 Every branch is divided until each array becomes size 1. And this is not a perfect binary tree since it is not divided by half.
 
-Therefore, leftmost branch’s level(k) is n3k =1, 3k = 1, k = log3n. 
+Therefore, leftmost branch’s level(k) is 
+<img width="581" alt="스크린샷 2021-04-29 오전 1 46 50" src="https://user-images.githubusercontent.com/63644587/116441827-c5a8e480-a88c-11eb-8aed-0586ba4cb76d.png">
 
-And rightmost branch’s level(l) is  n23l=1, l = log3/2n.
+
+And rightmost branch’s level(l) is  
+<img width="485" alt="스크린샷 2021-04-29 오전 1 48 05" src="https://user-images.githubusercontent.com/63644587/116441983-f4bf5600-a88c-11eb-807e-b61411d3fc36.png">
+
 
 Therefore, lower bound will be height of leftmost × n = k × n=nlog3n  
 
 and upper bound will be height of rightmost × n = l × n=nlog3/2n  
 
-Since nlog3n  ≤Tn≤ nlog3/2n is true, big-O notation of Tn  is O(nlogn).
+Since nlog3n  ≤T(n)≤ nlog3/2n
+ is true, big-O notation of Tn  is O(nlogn).
 
-We can prove this with substitution method, which is the way of proving an asymptotic bound on a recurrence by induction. Assume that T(n) = O(nlogn ), T(N) should be smaller or equal than c\*nlogn, and c should be bigger than 0. That means Ogn=fn:n0≤n,0≤fn≤c\*gn 
+We can prove this with substitution method, which is the way of proving an asymptotic bound on a recurrence by induction. Assume that T(n) = O(nlogn ), T(N) should be smaller or equal than c\*nlogn, and c should be bigger than 0. That means 
 
-$$T(n) ≤T(n3+T2n3+n ≤dn3logn3+d2n3log2n3+n
+<img width="960" alt="스크린샷 2021-04-29 오전 1 49 44" src="https://user-images.githubusercontent.com/63644587/116442191-2cc69900-a88d-11eb-86cd-c4bd1df9a0b4.png">
 
-`     `= dn3\*(log n-log3+2logn-2log3)+n
+<img width="834" alt="스크린샷 2021-04-29 오전 1 50 30" src="https://user-images.githubusercontent.com/63644587/116442284-4831a400-a88d-11eb-8dad-b1c3b2648dfd.png">
 
-`     `= d n3\*(3log n-3log3+2)+n
-
-`      `= d n3\*(3log n-3log3+2)+n
-
-`      `= d\*nlogn-dn(log3-23  )+n $$
 
 Therefore, 
 
-Tn ≤dnlogn, as long as d ≥1/(log3-23  ), 
+<img width="294" alt="스크린샷 2021-04-29 오전 1 51 17" src="https://user-images.githubusercontent.com/63644587/116442370-64cddc00-a88d-11eb-9ce4-5b36a94fb9cb.png"> as long as <img width="328" alt="스크린샷 2021-04-29 오전 1 51 50" src="https://user-images.githubusercontent.com/63644587/116442447-78794280-a88d-11eb-97dd-b46cd83cbfc3.png">
+ 
 
 And big-O notation of Tn is O(nlogn)
 
@@ -87,40 +95,40 @@ And big-O notation of Tn is O(nlogn)
 # **Problem 4
 Implement 3-way partition.** 
 
-def partition(a, lo, hi):*
+    def partition(a, lo, hi):
 
-`    `lt = lo
-`    `i = lo 
-`    `gt = hi 
-`    `pivot = a[lo] 
+          lt = lo
+          i = lo 
+          gt = hi 
+          pivot = a[lo] 
 
-`    `while i <= gt:
-`        `if a[i] < pivot:
-`            `a[lt], a[i] = a[i], a[lt]
-`            `lt += 1
-`            `i += 1
-`        `elif a[i] > pivot:
-`            `a[i], a[gt] = a[gt], a[i]
-`            `gt -= 1
-`        `else:
-`            `i += 1
+          while i <= gt:
+              if a[i] < pivot:
+                  a[lt], a[i] = a[i], a[lt]
+                  lt += 1
+                  i += 1
+              elif a[i] > pivot:
+                  a[i], a[gt] = a[gt], a[i]
+                  gt -= 1
+              else:
+                  i += 1
 
-`    `return lt, gt
-
-
-def quick\_sort(a, lo, hi):*
-`    `if lo >= hi:
-`        `return
-
-`    `lt, gt = partition(a, lo, hi)
-
-`    `quick\_sort(a, lo, lt - 1)
-`    `quick\_sort(a, gt + 1, hi)
+          return lt, gt
 
 
-if \_\_name\_\_ == "\_\_main\_\_" :
-`    `a = [40, 23, 42, 34, 53, 32, 22, 34, 53]
-`    `quick\_sort(a, 0, 8)
+    def quick\_sort(a, lo, hi):*
+          if lo >= hi:
+              return
+
+          lt, gt = partition(a, lo, hi)
+
+          quick\_sort(a, lo, lt - 1)
+          quick\_sort(a, gt + 1, hi)
+
+
+    if \_\_name\_\_ == "\_\_main\_\_" :
+          a = [40, 23, 42, 34, 53, 32, 22, 34, 53]
+          quick\_sort(a, 0, 8)
 
 This method set the lt(litte) and gt(greater) and compare pivot with every element in the array. If find the element which is smaller than pivot, this element is sent to “lt” boundary, and if find the element bigger than pivot, this element is sent to “gt” boundary, while let equal element stay at its position. Now array is divided into 3 small arrays which is lower than pivot, equal to pivot, and bigger than pivot. And recursivley conduct quick sort on lower and bigger array.  
 
@@ -131,23 +139,23 @@ The result is following.
 
 There is another implementation of 3-way quick sort which uses small anonymous function, lambda. We can easily filter values in a given condition(smaller, equal, higher). After that, do some recursive tasks to lower and higher array, and finally every divided array is combined. 
 
-def qsort(a):
-`    `if len(a) <= 1:
-`        `return a
+    def qsort(a):
+          if len(a) <= 1:
+              return a
 
-`    `pivot = a[0]
-`    `lower = list(filter(lambda x : x < pivot, a))
-`    `equal = list(filter(lambda x : x == pivot, a))
-`    `higher = list(filter(lambda x : x > pivot, a))
-
-
-`    `return qsort(lower) + equal + qsort(higher)
+          pivot = a[0]
+          lower = list(filter(lambda x : x < pivot, a))
+          equal = list(filter(lambda x : x == pivot, a))
+          higher = list(filter(lambda x : x > pivot, a))
 
 
-if \_\_name\_\_ == "\_\_main\_\_" :
-`    `a = [40, 23, 42, 34, 53, 32, 22, 34, 53]
-`    `b = qsort(a)
-`    `print(b)
+          return qsort(lower) + equal + qsort(higher)
+
+
+    if \_\_name\_\_ == "\_\_main\_\_" :
+          a = [40, 23, 42, 34, 53, 32, 22, 34, 53]
+          b = qsort(a)
+          print(b)
 
 The result is following. 
 
