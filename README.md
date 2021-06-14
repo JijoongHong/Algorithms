@@ -23,3 +23,20 @@
 
 ## Dynamic Programming
 - [notes](https://www.notion.so/pyrasuite/6-DP-555e6811e00f40f7bb3f410d3bc554a9)
+
+
+## Greedy
+- [notes](https://www.notion.so/pyrasuite/7-Greedy-324e92a3459e4cfca0b7f3b0fdf1ab5f)
+
+
+## Huffman code
+- [notes](https://www.notion.so/pyrasuite/8-Huffman-code-03ed81352079454b8b945c0db505551f)
+
+
+## Backtracking
+- [notes](https://www.notion.so/pyrasuite/9-Backtracking-Branch-and-Bound-d1e4608e407a4b1ebd47da7589c82740)
+
+
+## Radix sort
+- [notes](https://www.notion.so/pyrasuite/10-Radix-sort-String-sorting-8fb8f63dda474a51a69bbe5fba93924e)
+
